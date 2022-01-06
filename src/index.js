@@ -1,7 +1,7 @@
 'use strict'
 
 const defaultOptions = {
-  onlyPrefix: false,
+  withPrefixOnly: false,
   noEqual: false,
 }
 
@@ -12,11 +12,11 @@ const uneUnicode = (str) =>
 
 const contentParseURL = (content, options) => {
   const onlyPrefix =
-    (options && options.withPrefix) || defaultOptions.withPrefix
+    (options && options.withPrefixOnly) || defaultOptions.withPrefixOnly
   const allowEqualLink = (options && options.noEqual) || defaultOptions.noEqual
   const re = onlyPrefix
-    ? /(www.\S+|https?:\/\/)[\w-]+[.:]\w(([#&./=?]?[\w-]+))*\/?/g
-    : /(www.\S+|https?:\/\/|)[\w-]+[.:]\w(([#&./=?]?[\w-]+))*\/?/g
+    ? /(www.\S+|https?:\/\/)[\w]+[.:]\w(([#&./=?]?[\w]+))*\/?/g
+    : /(www.\S+|https?:\/\/|)[\w]+[.:]\w(([#&./=?]?[\w]+))*\/?/g
   const re2 = /[^\s\w%./:|-]/gi
   const comsg = uneUnicode(content.toLowerCase().replace(re2, '')).normalize()
   const allLinkS = comsg.match(re)

@@ -1,0 +1,21 @@
+name: Lint Code
+
+on: [push, pull_request]
+
+jobs:
+  Check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Nodejs Environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17
+
+      - name: Install Packages
+        run: npm install
+
+      - name: Check Code Problems
+        run: npm run lint

@@ -1,6 +1,6 @@
 declare module 'text-parse-url' {
   interface DefaultOption {
-    onlyPrefix: boolean
+    withPrefixOnly: boolean
     noEqual: boolean
   }
   export default function (opt: DefaultOption): any

@@ -2,7 +2,7 @@
   "name": "text-parse-url",
   "version": "1.0.0",
   "description": "Simple and liteweight URL Parser",
-  "license": "ISC",
+  "license": "MIT",
   "author": "RealKoolisw",
   "homepage": "https://github.com/RealKoolisw/text-parse-url#readme",
   "repository": {
@@ -18,7 +18,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
-  "types": "index.d.ts",
+  "types": "typings/index.d.ts",
   "devDependencies": {
     "eslint": "^8.6.0",
     "prettier": "^2.5.1"
