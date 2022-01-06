@@ -1,0 +1,33 @@
+{
+  "name": "text-parse-url",
+  "version": "1.0.0",
+  "description": "Simple and liteweight URL Parser",
+  "license": "ISC",
+  "author": "RealKoolisw",
+  "homepage": "https://github.com/RealKoolisw/text-parse-url#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealKoolisw/text-parse-url.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RealKoolisw/text-parse-url/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "types": "index.d.ts",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "prettier": "^2.5.1"
+  },
+  "keywords": [
+    "parse",
+    "parser",
+    "text-url-parser",
+    "url",
+    "url-parser"
+  ]
+}
