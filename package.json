@@ -16,11 +16,13 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "jest"
   },
   "types": "typings/index.d.ts",
   "devDependencies": {
     "eslint": "^8.6.0",
+    "jest": "^27.4.7",
     "prettier": "^2.5.1"
   },
   "keywords": [

@@ -19,3 +19,6 @@ jobs:
 
       - name: Check Code Problems
         run: npm run lint
+
+      - name: Test Code Functions
+        run: npm run test

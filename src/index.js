@@ -1,5 +1,7 @@
 'use strict'
 
+const { version } = require('../package.json')
+
 const defaultOptions = {
   withPrefixOnly: false,
   noEqual: false,
@@ -11,16 +13,23 @@ const uneUnicode = (str) =>
   )
 
 const contentParseURL = (content, options) => {
+  if (!content && typeof content !== String) throw new Error('Missing Content!')
+  const optWithPrefixOnly = options && options.withPrefixOnly
+  const optNoEqual = options && options.noEqual
+  if (
+    (optWithPrefixOnly && typeof optWithPrefixOnly !== 'boolean') ||
+    (optNoEqual && typeof optNoEqual !== 'boolean')
+  )
+    throw new Error('Error Types of option!')
   const onlyPrefix =
-    (options && options.withPrefixOnly) || defaultOptions.withPrefixOnly
-  const allowEqualLink = (options && options.noEqual) || defaultOptions.noEqual
+    (options && optWithPrefixOnly) || defaultOptions.withPrefixOnly
+  const allowEqualLink = (options && optNoEqual) || defaultOptions.noEqual
   const re = onlyPrefix
     ? /(www.\S+|https?:\/\/)[\w]+[.:]\w(([#&./=?]?[\w]+))*\/?/g
     : /(www.\S+|https?:\/\/|)[\w]+[.:]\w(([#&./=?]?[\w]+))*\/?/g
-  const re2 = /[^\s\w%./:|-]/gi
-  const comsg = uneUnicode(content.toLowerCase().replace(re2, '')).normalize()
+  const comsg = uneUnicode(content.toLowerCase()).normalize()
   const allLinkS = comsg.match(re)
-  return allowEqualLink ? [...new Set(allLinkS)] : allLinkS
+  return allowEqualLink ? [...new Set(allLinkS)] : allLinkS || []
 }
 
 module.exports = (opt) => {
@@ -29,3 +38,5 @@ module.exports = (opt) => {
 }
 
 module.exports.contentParseURL = contentParseURL
+module.exports.version = version
+module.exports.config = defaultOptions
