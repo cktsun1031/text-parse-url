@@ -17,7 +17,7 @@ const { contentParseURL } = require('text-parse-url')({
 })
 const { contentParseURL } = require('text-parse-url')
 
-//Typescript
+// Typescript
 import textParseUrl from 'text-parse-url'
 
 contentParseURL('My website link is ->www.google.com<-')
