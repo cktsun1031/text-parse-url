@@ -20,9 +20,6 @@ jobs:
       - name: Install Packages
         run: npm install
 
-      - name: Lint Codes
-        run: npm run lint
-
       - name: Publish the Package
         run: npm publish --access public
         env:

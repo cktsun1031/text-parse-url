@@ -1,5 +1,3 @@
-'use strict'
-
 const { version } = require('../package.json')
 
 const defaultOptions = {
