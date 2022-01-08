@@ -1,4 +1,4 @@
-const { config, contentParseURL } = require('../src/index')
+const { config, contentParseURL } = require('../src/index')()
 
 /* eslint-disable no-undef */
 
@@ -53,14 +53,6 @@ test('Infomation - Get Config', () => {
     noEqual: false,
     withPrefixOnly: false,
   })
-})
-
-test('Error Testing - Missing Text', () => {
-  try {
-    contentParseURL()
-  } catch (e) {
-    expect(e.message).toBe('Missing Content!')
-  }
 })
 
 test('Error Testing - Error Type', () => {

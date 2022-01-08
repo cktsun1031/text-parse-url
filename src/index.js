@@ -32,9 +32,5 @@ const contentParseURL = (content, options) => {
 
 module.exports = (opt) => {
   if (opt !== void 0) Object.assign(defaultOptions, opt)
-  return { contentParseURL }
+  return { contentParseURL, version, config: defaultOptions }
 }
-
-module.exports.contentParseURL = contentParseURL
-module.exports.version = version
-module.exports.config = defaultOptions
