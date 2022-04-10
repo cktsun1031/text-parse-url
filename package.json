@@ -19,7 +19,7 @@
     "lint:fix": "eslint --fix .",
     "test": "jest"
   },
-  "types": "typings/index.d.ts",
+  "types": "types/index.d.ts",
   "devDependencies": {
     "eslint": "^8.13.0",
     "jest": "^27.5.1",

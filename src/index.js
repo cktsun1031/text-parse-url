@@ -1,5 +1,3 @@
-const { version } = require('../package.json')
-
 const defaultOptions = {
   withPrefixOnly: false,
   noEqual: false,
@@ -11,7 +9,7 @@ const uneUnicode = (str) =>
   )
 
 const contentParseURL = (content, options) => {
-  if (!content && typeof content !== String) return undefined;
+  if (!content && typeof content !== String) return undefined
   const optWithPrefixOnly = options && options.withPrefixOnly
   const optNoEqual = options && options.noEqual
   if (
@@ -32,5 +30,5 @@ const contentParseURL = (content, options) => {
 
 module.exports = (opt) => {
   if (opt !== void 0) Object.assign(defaultOptions, opt)
-  return { contentParseURL, version, config: defaultOptions }
+  return { contentParseURL, config: defaultOptions }
 }
