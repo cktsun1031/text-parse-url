@@ -11,7 +11,7 @@ const uneUnicode = (str) =>
   )
 
 const contentParseURL = (content, options) => {
-  if (!content && typeof content !== String) throw new Error('Missing Content!')
+  if (!content && typeof content !== String) return undefined;
   const optWithPrefixOnly = options && options.withPrefixOnly
   const optNoEqual = options && options.noEqual
   if (

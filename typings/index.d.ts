@@ -3,5 +3,5 @@ declare module 'text-parse-url' {
     withPrefixOnly?: boolean
     noEqual?: boolean
   }
-  export default function (opt: DefaultOption): any
+  export default function (opt?: DefaultOption): string[] | undefined
 }
