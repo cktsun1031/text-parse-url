@@ -25,23 +25,23 @@ Typescript is also supported.
 const { contentParseURL } = require('text-parse-url')({
   withPrefixOnly: true,
   noEqual: true,
-})
-const { contentParseURL } = require('text-parse-url')()
+});
+const { contentParseURL } = require('text-parse-url')();
 
 // Typescript
-import textParseUrl from 'text-parse-url'
-const { contentParseURL } = textParseUrl()
+import textParseUrl from 'text-parse-url';
+const { contentParseURL } = textParseUrl();
 
-contentParseURL('My website link is ->www.google.com<-')
+contentParseURL('My website link is ->www.google.com<-');
 // Result: ['www.google.com']
 
 contentParseURL('My website link is ->www.google.com<-', {
   withPrefixOnly: true,
-})
+});
 // Result: []
 
 contentParseURL('google.com google.com', {
   noEqual: true,
-})
+});
 // Result: ['www.google.com']
 ```

@@ -1,17 +1,11 @@
-interface DefaultOption {
-  withPrefixOnly?: boolean
-  noEqual?: boolean
+interface ParseUrlOptions {
+  withPrefixOnly?: boolean;
+  noEqual?: boolean;
 }
 
-declare function _exports(opt?: DefaultOption): {
-  contentParseURL: (
+declare module 'text-parse-url' {
+  export function parseURL(
     content: string,
-    options?: DefaultOption
-  ) => string[] | undefined
-  config: {
-    withPrefixOnly: boolean
-    noEqual: boolean
-  }
+    options?: ParseUrlOptions,
+  ): string[];
 }
-
-export = _exports

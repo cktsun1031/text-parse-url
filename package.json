@@ -1,6 +1,6 @@
 {
   "name": "text-parse-url",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Simple and liteweight URL Parser",
   "license": "MIT",
   "author": "RealKoolisw",
@@ -12,18 +12,25 @@
   "bugs": {
     "url": "https://github.com/RealKoolisw/text-parse-url/issues"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "format": "prettier --write .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "build": "cross-env NODE_ENV=production npx swc src -d dist",
+    "postjob": "rimraf src",
+    "lint": "prettier --write . && eslint --fix .",
     "test": "jest"
   },
   "types": "types/index.d.ts",
   "devDependencies": {
-    "eslint": "^8.13.0",
-    "jest": "^27.5.1",
-    "prettier": "^2.6.2"
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.197",
+    "@types/jest": "^28.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.17.0",
+    "jest": "^28.1.1",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.4",
+    "typescript": "^4.7.3"
   },
   "keywords": [
     "parse",
