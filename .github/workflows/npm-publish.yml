@@ -22,12 +22,15 @@ jobs:
 
       - name: Lint Module
         run: npm run lint
-        
+
       - name: Test Module
         run: npm run test
 
       - name: Build Optimized Code
-        run: npm run build 
+        run: npm run build
+
+      - name: Shrink Module
+        run: rm -rf -v !("node_modules"|"dist"|"types"|"README.md"|"package.json"|"package-lock.json"|"LICENSE"|"tsconfig.json")
 
       - name: Publish the Package
         run: npm publish --access public
