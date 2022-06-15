@@ -4,8 +4,10 @@ interface ParseUrlOptions {
 }
 
 declare module 'text-parse-url' {
-  export function parseURL(
+  export function getUrl(content: string, options?: ParseUrlOptions): string[];
+
+  export function getUrlAmount(
     content: string,
-    options?: ParseUrlOptions,
-  ): string[];
+    options?: Omit<ParseUrlOptions, 'noEqual'>,
+  ): number;
 }

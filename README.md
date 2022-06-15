@@ -22,20 +22,20 @@ Typescript is also supported.
 
 ```js
 // Javascript
-const { parseURL } = require('text-parse-url');
+const { getUrl } = require('text-parse-url');
 
 // Typescript
-import { parseURL } from 'text-parse-url';
+import { getUrl } from 'text-parse-url';
 
-parseURL('My website link is ->www.google.com<-');
+getUrl('My website link is ->www.google.com<-');
 // Result: ['www.google.com']
 
-parseURL('My website link is ->www.google.com<-', {
+getUrl('My website link is ->www.google.com<-', {
   withPrefixOnly: true,
 });
 // Result: []
 
-parseURL('google.com google.com', {
+getUrl('google.com google.com', {
   noEqual: true,
 });
 // Result: ['www.google.com']
