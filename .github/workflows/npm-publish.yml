@@ -15,24 +15,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: latest
+          cache: pnpm
           registry-url: https://registry.npmjs.org/
 
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: latest
+
       - name: Install Packages
-        run: npm install
+        run: pnpm i
 
       - name: Lint Module
-        run: npm run lint
+        run: pnpm lint
 
       - name: Test Module
-        run: npm run test
+        run: pnpm test
 
       - name: Build Optimized Code
-        run: npm run build
+        run: pnpm build
 
       - name: Shrink Module
-        run: rm -rf -v !("node_modules"|"dist"|"types"|"README.md"|"package.json"|"package-lock.json"|"LICENSE"|"tsconfig.json")
+        run: rm -rf -v !("node_modules"|"dist"|"types"|"README.md"|"package.json"|"LICENSE"|"tsconfig.json")
 
       - name: Publish the Package
-        run: npm publish --access public
+        run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
