@@ -34,9 +34,6 @@ jobs:
       - name: Build Optimized Code
         run: pnpm build
 
-      - name: Shrink Module
-        run: rm -rf -v !("node_modules"|"dist"|"types"|"README.md"|"package.json"|"LICENSE"|"tsconfig.json")
-
       - name: Publish the Package
         run: pnpm publish --access public
         env:
